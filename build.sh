@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-docker build . -t tschm/lie
-
+docker-compose build --no-cache web
