@@ -7,7 +7,6 @@ USER root
 RUN conda install -c conda-forge cvxpy=1.0.14
 RUN conda install -c anaconda pandas-datareader=0.7.0
 
-COPY ./books /home/${NB_USER}/books
-RUN echo ${HOME}
+COPY ./books ${HOME}/books
 
 USER ${NB_USER}
