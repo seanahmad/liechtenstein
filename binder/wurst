@@ -1,7 +1,0 @@
-name: example-environment
-channels:
-  - conda-forge
-  - anaconda
-dependencies:
-  - cvxpy=1.0.14
-  - pandas-datareader=0.7.0

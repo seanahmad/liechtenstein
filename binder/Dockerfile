@@ -1,12 +1,9 @@
 # Set the base image to Ubuntu
-FROM jupyter/scipy-notebook:83ed2c63671f
-
-USER root
+FROM lobnek/jupyter:v1.1
 
 # install cvxpy
 RUN conda install -c conda-forge cvxpy=1.0.14
 RUN conda install -c anaconda pandas-datareader=0.7.0
 
-COPY ./books ${HOME}/books
+COPY ./work ${HOME}/workd
 
-USER ${NB_USER}
