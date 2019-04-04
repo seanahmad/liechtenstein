@@ -8,7 +8,7 @@ IMAGE := tschm/liechtenstein
 include .env
 export
 
-.PHONY: help build jupyter tag hub
+.PHONY: help build jupyter tag hub slides
 
 
 .DEFAULT: help
