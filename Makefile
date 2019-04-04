@@ -40,3 +40,7 @@ hub: tag
 	docker tag ${IMAGE}:latest ${IMAGE}:${PROJECT_VERSION}
 	docker push ${IMAGE}:${PROJECT_VERSION}
 	docker rmi -f ${IMAGE}:${PROJECT_VERSION}
+
+slides:
+	mkdir -p artifacts
+	cp -r work/* artifacts
