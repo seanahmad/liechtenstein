@@ -41,6 +41,6 @@ hub: tag
 	docker push ${IMAGE}:${PROJECT_VERSION}
 	docker rmi -f ${IMAGE}:${PROJECT_VERSION}
 
-slides:
+slides: build
 	mkdir -p artifacts
 	cp -r work/* artifacts
