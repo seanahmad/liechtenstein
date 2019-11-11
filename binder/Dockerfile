@@ -1,11 +1,8 @@
 # Set the base image to Ubuntu
-FROM lobnek/jupyter:v2.8
-
-# File Author / Maintainer
-MAINTAINER Thomas Schmelzer "thomas.schmelzer@lobnek.com"
+FROM tschm/docker:release-0.4
 
 # install the DataReader
-RUN pip install pandas-datareader==0.7.0
+RUN pip install pandas-datareader==0.7.0 cvxpy
 
-COPY --chown=beakerx:beakerx ./work ${WORK}
+COPY --chown=jovyan:100 ./work ${WORK}
 
