@@ -4,12 +4,7 @@ PROJECT_VERSION := 1.1
 SHELL := /bin/bash
 IMAGE := tschm/liechtenstein
 
-# needed to get the ${PORT} environment variable
-include .env
-export
-
 .PHONY: help build jupyter tag hub slides
-
 
 .DEFAULT: help
 
@@ -27,7 +22,7 @@ build:
 	docker-compose build jupyter
 
 jupyter: build
-	echo "http://localhost:${PORT}"
+	echo "http://localhost:8822"
 	docker-compose up jupyter
 
 tag:
