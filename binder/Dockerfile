@@ -1,15 +1,11 @@
-FROM jupyter/base-notebook:1386e2046833 as jupyter
+# Set the base image to jupyter
+FROM tschm/jupyter:1.0.0 as jupyter
 
-# File Author / Maintainer
-MAINTAINER Thomas Schmelzer "thomas.schmelzer@gmail.com"
 
 # copy the work folder into the image, hence the notebooks will be available with docker pull from dockerhub
 # hardcoded parameters!? see https://github.com/moby/moby/issues/35018
 COPY --chown=jovyan:users ./work /home/jovyan/work
 
-# copy the config.ini file
-COPY /binder/jupyter_notebook_config.py /etc/jupyter/jupyter_notebook_config.py
-
 # install the DataReader
-RUN conda install pandas numpy matplotlib beakerx cvxpy && conda clean -y --all
+#RUN conda install beakerx cvxpy && conda clean -y --all
 
