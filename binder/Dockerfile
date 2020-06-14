@@ -1,11 +1,9 @@
 # Set the base image to jupyter
-FROM tschm/jupyter:1.0.0 as jupyter
-
+FROM tschm/jupyter:1.2.0 as jupyter
 
 # copy the work folder into the image, hence the notebooks will be available with docker pull from dockerhub
 # hardcoded parameters!? see https://github.com/moby/moby/issues/35018
-COPY --chown=jovyan:users ./work /home/jovyan/work
+COPY --chown=jovyan:users ./work $WORK
 
-# install the DataReader
-#RUN conda install beakerx cvxpy && conda clean -y --all
+
 
